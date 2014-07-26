@@ -165,6 +165,9 @@ a:visited { color: #205caa; }
 
 /* Post styles */
 /* ----------------------------------------------------------*/
+.post img {
+   max-width: 100%;
+}
 
 .post-header { margin: 10px 0 30px; }
 
