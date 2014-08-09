@@ -16,7 +16,7 @@ I've been in the web industry since 2007 and I like to think I've been lucky eno
 
 #### My current topic of choice is Psychology surrounding the web industry including: working in a team, development processes, business and motivation. ####
 
-[![Me](http://www.thenorthcode.net/wp-content/uploads/2014/05/WP_000547.jpg)](http://www.thenorthcode.net/wp-content/uploads/2014/05/WP_000547.jpg "Me")
+[![Me](/img/About2.jpg)](/img/About2.jpg "Me")
 
 If you see me at meet-ups, conferences or anywhere else, buy me a beer and I will gladly reciprocate with conversation to ensue.
 
