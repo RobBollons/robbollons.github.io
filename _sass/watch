@@ -1,0 +1,3 @@
+#!/bin/sh
+sass --watch main.scss:../css/main.min.css --style compressed --precision 9
+exit 0
