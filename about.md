@@ -3,21 +3,17 @@ layout: page
 title: About
 permalink: /about/
 ---
-### I'm Rob Bollons, I live in a small village in The Isle of Axholme in Lincolnshire with my amazing soon-to-be-wife and my gorgeous pet dog called Mya.
 
-[![Me and Mya Chilling in the Garden](/img/About1.jpg)](/img/about1.jpg "Me and Mya Chilling in the Garden")
-*Me and Mya Chilling in the Garden*
+Congratulations, you've finally found it. This is the blog of Rob Bollons (me) and this is what i'm all about:
 
-I work full time as Development Team Lead for a company called Cascade Human Resources Ltd that produces enterprise HR software, in my role i mainly specialise in UI development.
+### Technicalisms
+Team Leader . Full Stack Developer . Vim Practitioner . Former Microsoft Lover . Current Linux Aficionado . Code Agnostic . Technology Agnostic
 
-Hobbies wise, I like bouldering, camping and brewing my own beer. I also have a love for Single Malt Scotch.
+### Specialisms
+Brown Field Development . R & D . Commando Coding . Technical Vision
 
-I've been in the web industry since 2007 and I like to think I've been lucky enough to have more experiences than most in that time ranging through the whole life cycle of little and large web applications covering many different roles.
+### Genralisms
+Single Malt Whiskey Drinker . Full Stack Developer . Audio Book Listener . Dog Walker . Philosophy Ponderer . Anxiety Overcomer . Self Improver . Desk Plant Evangelist . Joie de Vivre . Northern Village Dweller . Belgian Beer Enthusiast . Conference Attendee . Bouldering Climber
 
-#### Currently i'm interested in Vim, ASP.NET vNext, NodeJS. I'm searching for a new programming language to satisfy my developers hunger. ####
-
-[![Me](/img/About2.jpg)](/img/About2.jpg "Me")
-
-If you see me at meet-ups, conferences or anywhere else, buy me a beer and I will gladly reciprocate.
-
-Cheers!
+### Socialisms
+[Twitter](https://twitter.com/robbollons) . [Grooveshark](https://grooveshark.com/#!/robbollons) . [Github](https://github.com/robbollons)

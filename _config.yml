@@ -1,9 +1,9 @@
 # Site settings
-title: Rob Bollons
-email: rob@thedogsbollons.com
-description: "Full Stack Developer | Joie de Vivre"
+title: The North Code
+email: rob@thenorthcode.net
+description: "Blog of Rob Bollons - Full Stack Developer | Joie de Vivre"
 baseurl: ""
-url: "http://thedogsbollons.com"
+url: "http://thenorthcode.net"
 twitter_username: robbollons
 github_username: robbollons
 
