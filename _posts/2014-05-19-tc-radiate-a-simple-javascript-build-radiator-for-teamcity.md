@@ -1,6 +1,9 @@
 ---
 layout: post
 title: tc-radiate - A Simple JavaScript Build Radiator for TeamCity
+tags:
+  - KnockoutJS
+  - Build Tools
 ---
 'tc-radiate' is a build radiator that is designed to be a highly visible but fun meme-related way to view the current status of builds. Originally it was built just to satisfy my own selfish purposes of learning KnockoutJS but my design goals were to end up with something that was: highly visible, light weight (minimal server code), fun and responsive on larger screens.
 

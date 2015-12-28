@@ -1,0 +1,22 @@
+.highlight, code {
+  color: $background-color;
+  background-color: $primary-color;
+  font: 17px/23px monospace;
+  margin: 0;
+}
+
+td.code {
+  padding: 5px;
+}
+
+pre {
+  margin: 0;
+}
+
+.gutter {
+  background-color: #BBBBBB;
+  border: solid 1px $secondary-color;
+  border-right-width: 0px;
+  padding: 7px;
+  color: $background-color;
+}

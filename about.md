@@ -4,16 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the blog of Rob Bollons (me) and this is what i'm all about:
-
-### Technicalisms
-Team Leader . Full Stack Developer . Vim Practitioner . Former Microsoft Lover . Current Linux Aficionado . Code Agnostic . Technology Agnostic
-
-### Specialisms
-Brown Field Development . R & D . Commando Coding . Technical Vision
-
-### Genralisms
-Single Malt Whiskey Drinker . Full Stack Developer . Audio Book Listener . Dog Walker . Philosophy Ponderer . Self Improver . Desk Plant Evangelist . Joie de Vivre . Northern Village Dweller . Belgian Beer Enthusiast . Conference Attendee . Bouldering Climber
-
-### Socialisms
-[Twitter](https://twitter.com/robbollons) . [Github](https://github.com/robbollons)
+My name is Rob Bollons, I'm an experienced developer of 8 years with an ongoing passion for tech, currently working as a Technical Lead. I've worked on many successful projects, some of which include; automated server management facilities, Intranet accounting systems, corporate websites, e-commerce websites and enterprise SaaS data-driven systems.
+I strive to be technology agnostic but my main areas of interest are Functional JavaScript Programming, Info Security, automation and UNIX tooling.
+I enjoy going to developer community meet-ups and have given numerous talks on a range of development related subjects.

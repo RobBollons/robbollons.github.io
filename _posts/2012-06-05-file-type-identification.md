@@ -1,6 +1,8 @@
 ---
 layout: post
 title: File Type Identification
+tags:
+  - Data Recovery
 ---
 Analysing raw binary is something that always makes me feel cool, like I'm from some sort of CSI/Bones type program, I assume it falls under the guise of data forensics. But before diving into the guts of a file it might be worth knowing a few things to look out for, here's what I found when tasked with identifying a great lump of unidentified binary. As an example I will be using the following JPEG pictures of my favorite Scotch and my dog.
 ![Glenmorangie](/img/Glenmorangie.jpg "Glenmorangie")

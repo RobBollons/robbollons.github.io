@@ -1,11 +1,16 @@
 ---
 layout: post
-title: Scaling the Codebase for Large NodeJS Applications Using a Modular Architecture - My Journey
+title: Attempting to Scale the Codebase for Large NodeJS Applications Using a Modular Architecture
+tags:
+  - NodeJS
+  - JavaScript
+  - Architecture
+  - Rambling
 ---
 In my ever continuing quest to improve my NodeJS skills I recently ran into a issue surrounding scaling the code base; Typically NodeJS is excellent at scaling in terms of the volume of traffic and on cloud based architectures but I've struggled to find solutions for scaling the code base itself. It seemed to me that (not through fault) most of the components we all know and love haven't been written with large scale applications in mind and I didn't want to have to resort to writing my own components that do pretty much the same thing but in a modular way, so I embarked on a mission to air out some of these issues.
 
 So as an example, given that I want to create a site with two distinct modules - a 'main' module and an 'admin' one, my aim is to go from a flat/single level folder structure like this:
-
+{% highlight plaintext %}
     .
     ¦-- /application
     ¦   ¦-- /controllers
@@ -18,9 +23,11 @@ So as an example, given that I want to create a site with two distinct modules -
     ¦   ¦   ¦-- /main
     ¦   ¦   '-- /admin
     ¦   '-- index.js
+{% endhighlight %}
 
 to a modular/three-dimensional folder structure like this:
 
+{% highlight plaintext %}
     .
     ¦-- /application
     ¦  ¦-- /admin
@@ -32,6 +39,8 @@ to a modular/three-dimensional folder structure like this:
     ¦  ¦   ¦-- /views
     ¦  ¦   '-- /models
     ¦  '-- /index.js
+{% endhighlight %}
+
 
 I found that the single level way of doing things started to get confusing. Both the applications share very few resources and behave in different ways which makes it difficult to keep tabs on where I am when I'm working on the code. Additionally, if I wanted to have distributed teams working on each separate application at the same time, the single level approach would limit the ability to keep dependency problems at bay, e.g. if the 'main' team wanted to use a particular development process, they would have to conform to the same structure as the 'admin' team and vice versa.
 The three-dimensional approach seemed like the sensible solution (assuming this was possible).
@@ -42,58 +51,60 @@ Take your index.js file (or the file you use as your NodeJS entry point) and cre
 
 **/application/admin/index.js**
 **/application/main/index.js**
+{% highlight javascript linenos %}
+  use strict;
 
-    use strict;
+  var kraken = require('kraken-js'),
+      app = require('express')(),
+      options = require('./lib/spec')(app);
 
-    var kraken = require('kraken-js'),
-        app = require('express')(),
-        options = require('./lib/spec')(app);
+  app.use(kraken(options));
 
-    app.use(kraken(options));
-
-    module.exports = app;
+  module.exports = app;
+{% endhighlight %}
 
 Next job is to simply use the `app.mount(...)` feature in express to mount the sub applications to their relevant URL:
 
 **/application/index.js**
+{% highlight javascript linenos %}
+  use strict;
 
-    use strict;
-
-    var port = process.env.port || 8000;
-        app = require('express')(),
-        main = require('./main/index'),
-        admin = require('./admin/index');
-
-
-    app.use('/admin', admin);
-    app.use('/', main);
+  var port = process.env.port || 8000;
+      app = require('express')(),
+      main = require('./main/index'),
+      admin = require('./admin/index');
 
 
-    app.listen(port, function (err) {
-        console.log('[%s] Listening on http://localhost:%d', app.settings.env, port);
-    });
+  app.use('/admin', admin);
+  app.use('/', main);
 
+
+  app.listen(port, function (err) {
+      console.log('[%s] Listening on http://localhost:%d',
+                   app.settings.env, port);
+  });
+{% endhighlight %}
 
 In doing this, both the 'main' and 'admin' module can exist independently of each other and can theoretically be ran completely separate from the main application. Even so, there is no reason why each of the applications couldn't reference shared resources from a common location. So far I haven't experienced any shortcomings with this but if I run into any I'll be sure to update this post.
 
 ### Building Sub Applications From a Top Level Applications Using Grunt
 After a bit of Googling I came across a library called [grunt-subgrunt](https://github.com/tusbar/grunt-subgrunt, "grunt-subgrunt on github"), this seemed like it held all the answers with regards to building sub applications. Using this I could simply fire off the grunt processes defined in my sub applications from the top level application with little issue. Or so it seemed.
 
-    'use strict';
+{% highlight javascript linenos %}
+  'use strict';
 
+  module.exports = function (grunt) {
 
-    module.exports = function (grunt) {
+      // Load the project's grunt tasks from a directory
+      require('grunt-config-dir')(grunt, {
+          configDir: require('path').resolve('tasks')
+      });
 
-        // Load the project's grunt tasks from a directory
-        require('grunt-config-dir')(grunt, {
-            configDir: require('path').resolve('tasks')
-        });
-
-        // Register group tasks
-        grunt.registerTask('build', [ 'subgrunt:build' ]);
-        grunt.registerTask('test', [ 'subgrunt:test' ]);
-    };
-
+      // Register group tasks
+      grunt.registerTask('build', [ 'subgrunt:build' ]);
+      grunt.registerTask('test', [ 'subgrunt:test' ]);
+  };
+{% endhighlight %}
 
 After using it a bit I noticed cracks started to appear. It seems that the grunt tasks in the sub application were mostly ran from the context of the top level folder - which caused all sorts of problems. It seems that in order for this solution to work, I would need to define absolute paths for all the grunt sub-tasks that have the issue, not an ideal solution but I just carried on rolling with it.
 

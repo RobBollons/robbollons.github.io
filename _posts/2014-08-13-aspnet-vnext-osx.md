@@ -1,6 +1,11 @@
 ---
 layout: post
 title: Running ASP.NET vNext on OSX
+tags:
+  - Tooling
+  - ASP.NET
+  - Mono
+  - How To
 ---
 
 ## Pre-reqs
@@ -14,7 +19,7 @@ Sadly at the time of writing, the homebrew package is still on 3.4.0 so this mea
 ### 1.1. Installation Dependencies
 Firstly on Mavericks and Mountain Lion you will need to install some dependencies but this is just a simple case of installing the following homebrew packages:
 
-{% highlight bash %}
+{% highlight shell linenos %}
 brew install autoconf
 brew install automake
 brew install libtool
@@ -23,14 +28,14 @@ brew install libtool
 ### 1.2. Make a Folder
 Create a folder in the root of your user folder called `.mono`, i put it here because when a newer version of Mono is released as a homebrew recipe, i will hopefully remember to delete the manual install and just install it via brew instead.
 
-{% highlight bash %}
+{% highlight shell linenos %}
 mkdir ~/.mono
 {% endhighlight %}
 
 ### 1.3. Installing Mono From Github
 In the folder just created, create a file called `installmono.sh` and add the following into it:
 
-{% highlight bash %}
+{% highlight shell linenos %}
 PREFIX=$PWD"/mono"
 PATH=$PREFIX/bin:$PATH
 git clone https://github.com/mono/mono.git
@@ -53,7 +58,7 @@ The k runtime is basically an SDK of all the stuff needed to build and run an AS
 ### 2.1. Installing Via Homebrew
 Luckily there is a brew tap avaible for the K Runtime, just tap it and install it:
 
-{% highlight bash %}
+{% highlight shell linenos %}
 brew tap aspnet/k
 brew install kvm
 {% endhighlight %}
@@ -72,7 +77,7 @@ As far as i know, the best way to get started quickly with an applicaton is [Yeo
 ### 3.1. Installing the Generator
 Yeoman runs on node and the template generators are installed via npm.
 
-{% highlight bash %}
+{% highlight shell linenos %}
 brew install node
 npm install -g yeoman
 npm install -g generator-aspnet
