@@ -1,7 +1,7 @@
 .highlight, code {
   color: $background-color;
   background-color: $primary-color;
-  font: 17px/23px monospace;
+  font: 17px/22px monospace;
   margin: 0;
 }
 
@@ -13,10 +13,8 @@ pre {
   margin: 0;
 }
 
-.gutter {
+.lineno {
   background-color: #BBBBBB;
-  border: solid 1px $secondary-color;
-  border-right-width: 0px;
-  padding: 7px;
+  padding: 1px 3px;
   color: $background-color;
 }

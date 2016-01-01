@@ -10,6 +10,6 @@ github_username: robbollons
 # Build settings
 markdown: kramdown
 permalink: pretty
-highlighter: rouge
+highlighter: pygments
 gems:
   - jekyll-gist
