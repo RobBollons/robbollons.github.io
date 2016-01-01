@@ -10,7 +10,7 @@ tags:
 
 I've put together a couple of simple vimscript functions that i find usefull for managing my VIM sessions.
 
-{% highlight viml linenos %}
+{% highlight vim linenos %}
 " Helper function to save the session to my vim dir
 function! s:SaveSession(sessionName)
   execute "mksession! ~/.vim/session/" . a:sessionName . ".vim"
@@ -25,7 +25,7 @@ command! -nargs=1 SaveSession call s:SaveSession(<f-args>)
 command! -nargs=1 RestoreSession call s:RestoreSession(<f-args>)
 {% endhighlight %}
 <br />
-{% highlight shell linenos %}
+{% highlight bash linenos %}
 #!/bin/sh
 
 exec vim -S "~/.vim/session/$@.vim"
