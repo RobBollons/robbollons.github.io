@@ -18,6 +18,10 @@ body {
   background-color: $background-color;
 }
 
+main, body>header, body>footer {
+  padding: 0 20px;
+}
+
 article, p {
   font: 20px/1.5em  serif;
   line-height: 30px;
