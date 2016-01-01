@@ -10,7 +10,7 @@ tags:
 In my ever continuing quest to improve my NodeJS skills I recently ran into a issue surrounding scaling the code base; Typically NodeJS is excellent at scaling in terms of the volume of traffic and on cloud based architectures but I've struggled to find solutions for scaling the code base itself. It seemed to me that (not through fault) most of the components we all know and love haven't been written with large scale applications in mind and I didn't want to have to resort to writing my own components that do pretty much the same thing but in a modular way, so I embarked on a mission to air out some of these issues.
 
 So as an example, given that I want to create a site with two distinct modules - a 'main' module and an 'admin' one, my aim is to go from a flat/single level folder structure like this:
-{% highlight plaintext %}
+{% highlight text %}
     .
     ¦-- /application
     ¦   ¦-- /controllers
@@ -27,7 +27,7 @@ So as an example, given that I want to create a site with two distinct modules -
 
 to a modular/three-dimensional folder structure like this:
 
-{% highlight plaintext %}
+{% highlight text %}
     .
     ¦-- /application
     ¦  ¦-- /admin
