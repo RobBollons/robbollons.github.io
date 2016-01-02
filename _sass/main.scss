@@ -92,6 +92,7 @@ ul.posts li {
 
 ul.posts .post-link {
   display: block;
+  font-size: 20px;
 }
 
 footer.site-footer ul {
@@ -161,4 +162,18 @@ a.tag::after {
   position: absolute;
   right: 0;
   top: 0;
+}
+
+@media screen and (max-width: 699px) {
+  .logo {
+    height: 63px;
+  }
+
+  body > header h1 {
+    font-size: 35px;
+  }
+
+  body > header p {
+    font-size: 16px;
+  }
 }
