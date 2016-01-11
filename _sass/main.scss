@@ -1,13 +1,18 @@
 $background-color: #333333;
 $primary-color: #EEEEEE;
 $secondary-color: #999999;
-
 @import 'components/_code';
 @import 'components/_syntax-highlight';
 
 @mixin no-list() {
   list-style-type: none;
   padding: 0px;
+}
+
+@mixin clearfix() {
+  content:"";
+  display:table;
+  clear:both;
 }
 
 body {
@@ -29,7 +34,6 @@ article, p {
 
 a {
   color: $primary-color;
-  text-decoration: none;
 }
 
 p.tagline {
@@ -43,6 +47,10 @@ body > header h1 {
   margin: 0px;
 }
 
+body > header h1 a {
+  text-decoration: none;
+}
+
 article p a {
   text-decoration: underline;
 }
@@ -51,7 +59,7 @@ article img {
   max-width: 100%;
 }
 
-body > header > div, nav, main, body > footer > ul {
+body > header > div, nav, main, body > footer > div {
   max-width: 70ch;
   margin: auto;
 }
@@ -68,6 +76,10 @@ hr {
 
 .time {
   color: $secondary-color;
+}
+
+.rss-subscribe {
+  font: 15px sans-serif;
 }
 
 /* Nav */
@@ -97,6 +109,7 @@ ul.posts .post-link {
 
 footer.site-footer ul {
   @include no-list();
+  float:left;
 }
 
 footer.site-footer ul li {
@@ -113,6 +126,21 @@ footer.site-footer ul li {
 
 .logo path {
   fill: $primary-color;
+}
+
+.site-footer:after {
+  @include clearfix();
+}
+
+.site-footer h4 {
+  margin: 0;
+}
+
+.copy-notice {
+  line-height: 50px;
+  float:right;
+  padding: 0 10px;
+  font-size: 0.9em;
 }
 
 ul.tags {

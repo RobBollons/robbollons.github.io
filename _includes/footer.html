@@ -1,14 +1,19 @@
 <footer class="site-footer">
-  <ul>
-    <li><h4>Contact: </h4></li>
-    {% if site.email %}
-    <li><a href="mailto:{{ site.email }}">Email</a></li>
-    {% endif %}
-    {% if site.github_username %}
-    <li><a href="https://github.com/{{ site.github_username }}">GitHub</a></li>
-    {% endif %}
-    {% if site.twitter_username %}
-    <li><a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a></li>
-    {% endif %}
-  </ul>
+  <div>
+    <ul>
+      <li><h4>Contact: </h4></li>
+      {% if site.email %}
+      <li><a href="mailto:{{ site.email }}">Email</a></li>
+      {% endif %}
+      {% if site.github_username %}
+      <li><a href="https://github.com/{{ site.github_username }}">GitHub</a></li>
+      {% endif %}
+      {% if site.twitter_username %}
+      <li><a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a></li>
+      {% endif %}
+    </ul>
+    <div class="copy-notice">
+      &copy; Robert Bollons {{ site.time | date: "%Y" }}
+    </div>
+  </div>
 </footer>

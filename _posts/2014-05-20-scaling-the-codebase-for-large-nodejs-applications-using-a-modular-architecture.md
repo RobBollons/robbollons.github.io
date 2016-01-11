@@ -1,12 +1,20 @@
 ---
 layout: post
-title: Attempting to Scale the Codebase for Large NodeJS Applications Using a Modular Architecture
+title: Scaling the Codebase for Large NodeJS Applications Using a Modular Architecture
 tags:
   - NodeJS
   - JavaScript
   - Architecture
   - Rambling
 ---
+
+**UPDATE:** This article is primarily about KrakenJS, Grunt, NConf and Express and will describe specifics about scaling those solutions in a sincle process. Since writing this article I've come across much better methods for building NodeJS applications, briefly here are two high-level options:
+
+ - Microservices - Split an application up into sub-applications that communicate typically using HTTP/REST or message queuing. Framework-type logic could be shared across applications as a seperate submodule if need be. [https://en.wikipedia.org/wiki/Microservices](https://en.wikipedia.org/wiki/Microservices)
+ - Module Driven Development - Build a larger application from lots of smaller submodules, [as advocated by Substack](http://substack.net/how_I_write_modules)
+
+___
+
 In my ever continuing quest to improve my NodeJS skills I recently ran into a issue surrounding scaling the code base; Typically NodeJS is excellent at scaling in terms of the volume of traffic and on cloud based architectures but I've struggled to find solutions for scaling the code base itself. It seemed to me that (not through fault) most of the components we all know and love haven't been written with large scale applications in mind and I didn't want to have to resort to writing my own components that do pretty much the same thing but in a modular way, so I embarked on a mission to air out some of these issues.
 
 So as an example, given that I want to create a site with two distinct modules - a 'main' module and an 'admin' one, my aim is to go from a flat/single level folder structure like this:
