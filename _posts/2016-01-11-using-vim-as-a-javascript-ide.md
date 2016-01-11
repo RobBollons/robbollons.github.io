@@ -8,7 +8,7 @@ tags:
 
 If you're new to Vim and want to get started then try reading my other guide first: [Getting started with Vim](/2016/01/01/getting-started-with-vim/)
 
-Here's what we're going to cover in this article:
+Here's what we're going to cover in this article though:
 
  - Installing Plugins
  - Code Completion
@@ -16,7 +16,7 @@ Here's what we're going to cover in this article:
  - Syntax Highlighting & Colour Schemes
 
 ## Installing Plugins
-One of the most useful things you can do for yourself if you're going to use Vim as a development IDE is start by installing a plugin manager, we're goint to use this one throughout this guide: [Vundle](https://github.com/VundleVim/Vundle.vim). It was the first one I came across when I started with vim and it has served me well over the years. There are other alternatives that all achieve the same goal but perhaps in a slightly different way such as [Pathogen](https://github.com/tpope/vim-pathogen). In a nutshell what Vundle will do for you is save you having to download and update plugins, as well as managing the runtime path of installed scripts.
+One of the most useful things you can do for yourself if you're going to use Vim as a development IDE is start by installing a plugin manager, we're going to use this one throughout this guide: [Vundle](https://github.com/VundleVim/Vundle.vim). It was the first one I came across when I started with vim and it has served me well over the years. There are other alternatives that all achieve the same goal but perhaps in a slightly different way such as [Pathogen](https://github.com/tpope/vim-pathogen). In a nutshell what Vundle will do for you is save you having to download and update plugins, as well as managing the runtime path of installed scripts.
 
 To install Vundle, first make a directory for the plugins to be kept, this is `~/.vim/bundle/` by default so: `mkdir ~/.vim/bundle/`. Then clone down the Vundle repository from git into this folder: `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`.
 From there all you have to do is call Vundle from your .vimrc and you're good to go:
