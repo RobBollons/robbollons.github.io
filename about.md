@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-My name is Rob Bollons. I'm a software developer of 8 years both in career and in hobby.
+My name is Rob Bollons. I'm a software developer both in career and in hobby.
 
 My main areas of interest are currently: Functional Programming, JavaScript, Linux, Information Security and Automation.
 
