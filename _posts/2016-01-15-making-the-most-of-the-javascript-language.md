@@ -108,7 +108,7 @@ var outer = function () {
 
 var inner = outer(); // the outer function returns the inner function
 inner(); // => 1 // the inner functions still remembers that 'a' was defined as '1' from the outer function
-{% endhightlight %}
+{% endhighlight %}
 
 #### Type Coercion
 Many a joke has been made at the expense of JavaScript due to it's seemingly nonsensical type-coercion. The best thing to do to keep all the haters at bay is to use the trusty `===` which will do a strict comparison between objects which in most cases is what you want. The only time that won't work is when you want to compare separate object literals, even if they have exactly the same properties and structure, they will never be equal because they are two completely separate objects. In this case just compare each of the properties of the objects, some libraries like [underscorejs](http://underscorejs.org/) offer ways of doing a *deep comparison* which does the aforementioned.
