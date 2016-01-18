@@ -5,7 +5,7 @@ tags:
   - JavaScript
 ---
 
-Despite having used JavaScript in production for 8 years, I only starting learning how to write JavaScript *properly* in the past 2 years and from speaking to people I think there are many developers out there have had a similar experience. It seems that a large degree of us have picked up JavaScript as a supplement through writing websites in PHP, ASP etc.. Since the popularity of NodeJS and advancements in browsers however, JavaScript has been flung to the forefront of modern front-end web development.
+Despite having used JavaScript in production for 8 years, I only started learning how to write JavaScript *properly* in the past 2 years and from speaking to people I think there are many developers out there have had a similar experience. It seems that a large degree of us have picked up JavaScript as a supplement through writing websites in PHP, ASP etc.. Since the popularity of NodeJS and advancements in browsers however, JavaScript has been flung to the forefront of modern front-end web development.
 
 In this article I want to share some of the things I feel every developer should do to get the most out of JavaScript nowadays. This is by no means an exhaustive but I've tried to prioritise it in order of what I think is the most important.
 
