@@ -97,7 +97,7 @@ Closures are a great way to maintain private variables in JavaScript but also se
 
 {% highlight javascript linenos %}
 var outer = function () {
-  var a = 1; // variables declared outside of the 'inner' function decleration
+  var a = 1; // variables declared outside of the 'inner' function declaration
   var b = 2;
   
   return function inner() {
