@@ -7,7 +7,7 @@ tags:
 
 Despite having used JavaScript in production for 8 years, I only started learning how to write JavaScript *properly* in the past 2 years and from speaking to people I think there are many developers out there have had a similar experience. It seems that a large degree of us have picked up JavaScript as a supplement through writing websites in PHP, ASP etc.. Since the popularity of NodeJS and advancements in browsers however, JavaScript has been flung to the forefront of modern front-end web development.
 
-In this article I want to share some of the things I feel every developer should do to get the most out of JavaScript nowadays. This is by no means an exhaustive but I've tried to prioritise it in order of what I think is the most important.
+In this article I want to share some of the things I feel every developer should do to get the most out of JavaScript nowadays. This is by no means an exhaustive list but I've tried to prioritise it in order of what I think is the most important.
 
 JavaScript was born from chaos and due to this there are good and bad features that made it into the language. It's hard to really understand what these are until you've learnt hard lessons from building software in other languages as well as JavaScript and then having to go back and maintain/extend said application. Here's what I've learnt through the hard lessons I've experienced.
 
@@ -54,7 +54,7 @@ npm install -g browserify babelify
 browserify -t babelify es6code.js > es5code.js
 {% endhighlight %}
 
-If we were to re-write the previous example in ES6 it might look like this:
+If we were to re-write the first example in ES6 it might look like this:
 {% highlight javascript linenos %}
 const myArray = [1, 2, 3, 4, 5, 6]
 const add = (a, b) => a + b;
@@ -104,6 +104,6 @@ An application will inevitably change and if you've used a classical inheritance
 It's better to throw away the blueprints and start thinking of your program in terms of data flow and objects rather than classifications. Thinking in this way can greatly improve testability, maintainability and terseness of a program.
 
 ### 6. Keep on Learning and Don't Loose Faith
-Many people complain that JavaScript moves to fast and has too much churn but this is just due to some people not learning the language and focusing on frameworks. JavaScript definitely has some bad things but it also has some pretty awesome things too and if you learn to embrace the positives then you can really get some good use out of it. I was predominantly a C# developer but since I've started learning JavaScript *properly* it's become my language of choice due to it's highly pliable nature. If you have the stomach then JavaScript is a great entry language into the world of functional programming, particularly when used with ReactJS. I honestly can't recommend functional programming with JavaScript enough.
+Many people complain that JavaScript moves to fast and has too much churn but this is just due to people not learning the language and focusing on frameworks. JavaScript definitely has some bad things but it also has some pretty awesome things too and if you learn to embrace the positives then you can really get some good use out of it. I was predominantly a C# developer but since I've started learning JavaScript *properly* it's become my language of choice due to it's highly pliable nature. If you have the stomach then JavaScript is a great entry language into the world of functional programming, particularly when used with ReactJS. I honestly can't recommend functional programming with JavaScript enough.
 
 I hope this article helps spread the gospel of good JavaScript and equally I hope that from JavaScripts success that other languages will look to it for inspiration and not just stick to the status quo.
