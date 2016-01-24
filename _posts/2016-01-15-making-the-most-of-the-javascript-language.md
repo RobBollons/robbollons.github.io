@@ -7,7 +7,7 @@ tags:
 
 Despite having used JavaScript in production for 8 years, I only started learning how to write JavaScript *properly* in the past 2 years and from speaking to people I think there are many developers out there have had a similar experience. It seems that a large degree of us have picked up JavaScript as a supplement through writing websites in PHP, ASP etc.. Since the popularity of NodeJS and advancements in browsers however, JavaScript has been flung to the forefront of modern front-end web development.
 
-In this article I want to share some of the things I feel every developer should do to get the most out of JavaScript nowadays. This is by no means an exhaustive but I've tried to prioritise it in order of what I think is the most important.
+In this article I want to share some of the things I feel every developer should do to get the most out of JavaScript nowadays. This is by no means an exhaustive list but I've tried to prioritise it in order of what I think are the most important.
 
 JavaScript was born from chaos and due to this there are good and bad features that made it into the language. It's hard to really understand what these are until you've learnt hard lessons from building software in other languages as well as JavaScript and then having to go back and maintain/extend said application. Here's what I've learnt through the hard lessons I've experienced.
 
@@ -54,7 +54,7 @@ npm install -g browserify babelify
 browserify -t babelify es6code.js > es5code.js
 {% endhighlight %}
 
-If we were to re-write the previous example in ES6 it might look like this:
+If we were to re-write the first example in ES6 it might look like this:
 {% highlight javascript linenos %}
 const myArray = [1, 2, 3, 4, 5, 6]
 const add = (a, b) => a + b;
@@ -93,17 +93,32 @@ var foo = function () {
 You can see that where you declare your variables matters based on how the inner function is defined and how the side effect from the inner function causes the 'a' variable to change it's value. Being clear with the declaration of variables can go a great way to building more reliable software. Keep functions as pure as possible with clearly defined inputs and predictable outputs.
 
 #### Closures
-Closures are a great way to maintain private variables in JavaScript but also seem to be a source of great misunderstanding. In basic terms a closure gives you access to an outer functions scope from an inner function, like 'a' in the previous scoping example. That's basically it. Where it gets interesting is when you return a function from an outer function where the inner function accesses the scope of the outer function, the inner function will retain the outer functions scope past the lifetime of the outer function.
+Closures are a great way to maintain private variables in JavaScript but also seem to be a source of great misunderstanding. In basic terms a closure is gives you access to an outer functions scope from an inner function (AKA lexical scope), like 'a' in the previous scoping example. That's basically it. Where it gets interesting is when you return a function from an outer function where the inner function accesses the scope of the outer function, the inner function will retain the outer functions scope past the lifetime of the outer function. That sounds really complicated so let's explain it in an example:
+
+{% highlight javascript linenos %}
+var outer = function () {
+  var a = 1; // variables declared outside of the 'inner' function declaration
+  var b = 2;
+  
+  return function inner() {
+    return a; // return 'a' that was defined in the outer function.
+    // return b; // We could also access 'b' if we felt like it.
+  };
+};
+
+var inner = outer(); // the outer function returns the inner function
+inner(); // => 1 // the inner functions still remembers that 'a' was defined as '1' from the outer function
+{% endhighlight %}
 
 #### Type Coercion
 Many a joke has been made at the expense of JavaScript due to it's seemingly nonsensical type-coercion. The best thing to do to keep all the haters at bay is to use the trusty `===` which will do a strict comparison between objects which in most cases is what you want. The only time that won't work is when you want to compare separate object literals, even if they have exactly the same properties and structure, they will never be equal because they are two completely separate objects. In this case just compare each of the properties of the objects, some libraries like [underscorejs](http://underscorejs.org/) offer ways of doing a *deep comparison* which does the aforementioned.
 
 ### 5. Avoid Classical Inheritance
-This might be controversial because the status quo for the software industry is to use classical inheritance. I dare say you've written a mighty fine application using classical inheritance but if you do then you're probably not making the most out of JavaScript. You can write very lean and maintainable applications in JavaScript by using a more functional approach (have you spotted the theme yet).
+This might be controversial because the status quo for the software industry is to use classical inheritance. I daresay you've written a mighty fine application using classical inheritance but if you do then you're probably not making the most out of JavaScript. You can write very lean and maintainable applications in JavaScript by using a more functional approach (have you spotted the theme yet).
 An application will inevitably change and if you've used a classical inheritance pattern then when you decide you want to use a particular object in another way to service another requirement then you have to inherit all the junk that comes with it. This is particularly bad when you want to unit test and you end up having to mock a whole bunch of requirements of the base class just to test something simple higher up the inheritance chain.
 It's better to throw away the blueprints and start thinking of your program in terms of data flow and objects rather than classifications. Thinking in this way can greatly improve testability, maintainability and terseness of a program.
 
-### 6. Keep on Learning and Don't Loose Faith
-Many people complain that JavaScript moves to fast and has too much churn but this is just due to some people not learning the language and focusing on frameworks. JavaScript definitely has some bad things but it also has some pretty awesome things too and if you learn to embrace the positives then you can really get some good use out of it. I was predominantly a C# developer but since I've started learning JavaScript *properly* it's become my language of choice due to it's highly pliable nature. If you have the stomach then JavaScript is a great entry language into the world of functional programming, particularly when used with ReactJS. I honestly can't recommend functional programming with JavaScript enough.
+### 6. Keep on Learning and Don't Lose Faith
+Many people complain that JavaScript moves to fast and has too much churn but this is just due to people not learning the language and focusing on frameworks. JavaScript definitely has some bad things but it also has some pretty awesome things too and if you learn to embrace the positives then you can really get some good use out of it. I was predominantly a C# developer but since I've started learning JavaScript *properly* it's become my language of choice due to it's highly pliable nature. If you have the stomach then JavaScript is a great entry language into the world of functional programming, particularly when used with ReactJS. I honestly can't recommend functional programming with JavaScript enough.
 
 I hope this article helps spread the gospel of good JavaScript and equally I hope that from JavaScripts success that other languages will look to it for inspiration and not just stick to the status quo.
