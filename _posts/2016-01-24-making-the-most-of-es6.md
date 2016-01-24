@@ -1,11 +1,11 @@
 ---
-title: Making the Most of ES6
+title: Making the Most of ES6 (ES2015)
 layout: post
 tags:
   - JavaScript
 ---
 
-This is a kind of follow up to my post last week [Making the Most of the JavaScript Language]({% post_url 2016-01-15-making-the-most-of-the-javascript-language %}). I feel that it's probably worth going into some of the more useful features in a bit more detail.
+This is a kind of follow up to my post last week [Making the Most of the JavaScript Language]({% post_url 2016-01-15-making-the-most-of-the-javascript-language %}). I feel that it's probably worth going into some of the more useful features of ES6 (ES2015) in a bit more detail.
 
 I really like most of the features in ES6, there are some you'll use every day and there are also some you'll probably never use. I aim to cover the one's that you'll use more often in this article in order of their usefulness.
 
