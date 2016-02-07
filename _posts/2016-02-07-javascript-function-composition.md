@@ -74,8 +74,8 @@ let add = (a, b) => a + b;
 let sum = (arr) => arr.reduce(add, 0);
 let getProperty = (obj, propName) => obj[propName];
 
-let getWhisky = (obj) => getPropertyrop(obj, 'whisky');
-let getPrices = (arr) => arr.map((a) => getPropertyrop(a, 'price'));
+let getWhisky = (obj) => getProperty(obj, 'whisky');
+let getPrices = (arr) => arr.map((a) => getProperty(a, 'price'));
 
 let getTotalWhiskyPrice = (obj) => sum(getPrices(getWhisky(obj));
 
