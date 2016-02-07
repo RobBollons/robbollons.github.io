@@ -51,12 +51,12 @@ Example product (scotch whisky) data:
 {% highlight javascript linenos %}
 var add = function(a, b) { return a + b; };
 var sum = function (arr) { return arr.reduce(add, 0) };
-var prop = function(obj, propName) { return obj[propName]; };
+var getProperty = function(obj, propName) { return obj[propName]; };
 
-var getWhisky = function (obj) { return prop(obj, 'whisky' };
+var getWhisky = function (obj) { return getProperty(obj, 'whisky' };
 var getPrices = function (arr) {
   return arr.map(function (a) {
-    return prop(a, 'price');
+    return getProperty(a, 'price');
   });
 };
 
@@ -72,10 +72,10 @@ getTotalWhiskyPrice(products); // => 176.4
 {% highlight javascript linenos %}
 let add = (a, b) => a + b;
 let sum = (arr) => arr.reduce(add, 0);
-let prop = (obj, propName) => obj[propName];
+let getProperty = (obj, propName) => obj[propName];
 
-let getWhisky = (obj) => prop(obj, 'whisky');
-let getPrices = (arr) => arr.map((a) => prop(a, 'price'));
+let getWhisky = (obj) => getPropertyrop(obj, 'whisky');
+let getPrices = (arr) => arr.map((a) => getPropertyrop(a, 'price'));
 
 let getTotalWhiskyPrice = (obj) => sum(getPrices(getWhisky(obj));
 
