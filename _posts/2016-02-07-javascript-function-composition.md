@@ -83,7 +83,7 @@ getTotalWhiskyPrice(products); // => 176.4
 
 {% endhighlight %}
 
-### Lodash < v4
+### Lodash < v3
 {% highlight javascript linenos %}
 var _ = require('lodash');
 
@@ -98,12 +98,14 @@ getTotalWhiskyPrice(products); // => 176.4
 
 {% endhighlight %}
 
-### Ramda
+### Ramda/Lodash-fp
 {% highlight javascript linenos %}
-var _ = require('ramda'); // var _ = require('lodash/fp');
+var _ = require('ramda'); 
+// var _ = require('lodash/fp');
 
 var getWhisky = _.prop('whisky');
-var getPrices = _.map(_.prop('price')); // _.map('price'); // Using lodash-fp
+var getPrices = _.map(_.prop('price')); // Using Ramda
+//var getPrices = _.map('price'); // Using lodash-fp
 
 var getTotalwhiskyPrice = _.compose(_.sum,
                                      getPrices,
