@@ -83,7 +83,7 @@ getTotalWhiskyPrice(products); // => 176.4
 
 {% endhighlight %}
 
-### Lodash
+### Lodash < v4
 {% highlight javascript linenos %}
 var _ = require('lodash');
 
@@ -100,10 +100,10 @@ getTotalWhiskyPrice(products); // => 176.4
 
 ### Ramda
 {% highlight javascript linenos %}
-var _ = require('ramda');
+var _ = require('ramda'); // var _ = require('lodash/fp');
 
 var getWhisky = _.prop('whisky');
-var getPrices = _.map(_.prop('price'));
+var getPrices = _.map(_.prop('price')); // _.map('price'); // Using lodash-fp
 
 var getTotalwhiskyPrice = _.compose(_.sum,
                                      getPrices,
@@ -115,7 +115,7 @@ getTotalWhiskyPrice(products); // => 176.4
 
 
 ## Summary
-Ramda curries all it's functions automatically and has a dedicated 'compose' function which means that combining functions is incridibly elegant and means that your code reads very well. Lodash gets us part the way there but we have to partially apply our functions manually, it does have built-in functions for us to partially apply methods though which is still good. You can see how ES6 is a massive improvement on ES5 for function composition due to the use of lamda expressions, lambdas make it much easier to see what's going on for simple functions. One thing that is true for all the examples above is that function composition is pretty damn good. For anyone coming along to change your code it is much easier to see what is going on and without side-effects or un-necesesary logic, our code is much easier to test as well.
+Ramda and lodash-fp curry all their functions automatically and have a dedicated 'compose' function which means that combining functions is incridibly elegant and means that your code reads very well. Lodash < v4 gets us part the way there but we have to partially apply our functions manually, it does have built-in functions for us to partially apply methods though which is still good. You can see how ES6 is a massive improvement on ES5 for function composition due to the use of lamda expressions, lambdas make it much easier to see what's going on for simple functions. One thing that is true for all the examples above is that function composition is pretty damn good. For anyone coming along to change your code it is much easier to see what is going on and without side-effects or un-necesesary logic, our code is much easier to test as well.
 
 I hope the lack of comments in the above examples is OK, I was hopoing that due to the simple nature of the individual functions that it would be easy enough to follow for different levels of programming knowledge, If this is not the case then please get in touch.
 
