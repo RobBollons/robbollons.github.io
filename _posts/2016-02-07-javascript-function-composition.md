@@ -83,7 +83,7 @@ getTotalWhiskyPrice(products); // => 176.4
 
 {% endhighlight %}
 
-### Lodash < v3
+### Lodash < v4
 {% highlight javascript linenos %}
 var _ = require('lodash');
 
