@@ -9,7 +9,8 @@ tags:
 As a programmer it's pretty fair to say that you won't go through your career without using somebody else's code at some point. Effective code reuse is the panacea for good programing languages and we should always try to write our code with re-use in mind.
 In using third party code however, we are introducing a dependency into our program which needs careful consideration because we are handing over part of the responsibility of our program to something we don't always have control over. Time after time I've seen poorly managed dependencies that result in sometimes significant business problems further down the line costing an awful lot of money to repair, how can we avoid these problems and save our future selves a whole lot of trouble?
 
-# What Problems Can Dependencies Cause?  
+# What Problems Can Dependencies Cause?
+
 ### Deprecated features.
 If a feature that you rely on is deprecated because the library maintainer has a better way of doing things then that leaves you with the problem of updating your code to reflect this.
 
