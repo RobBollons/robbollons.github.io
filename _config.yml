@@ -7,7 +7,28 @@ url: "http://thenorthcode.net"
 twitter_username: robbollons
 github_username: robbollons
 
+collections:
+  presentations:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "presentations"
+    values:
+      layout: "presentation"
+      theme: "black"
+      showcontrols: false
+      showprogress: false
+      usebrowserhistory: true
+      center: false
+      transition: "fade"
+
+
 # Build settings
 markdown: kramdown
 permalink: pretty
 highlighter: rouge
+exclude:
+  - bower.json

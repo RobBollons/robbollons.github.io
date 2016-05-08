@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/components/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="/components/reveal.js/css/theme/{{ page.theme }}.css">
+    <link rel="stylesheet" href="/components/reveal.js/lib/css/zenburn.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        {{ content }}
+      </div>
+    </div>
+    <script src="/components/headjs/dist/1.0.0/head.js"></script>
+    <script src="/components/reveal.js/js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: {{ page.showcontrols }},
+        progress: {{ page.showprogress }},
+        history: {{ page.usebrowserhistory }},
+        center: {{ page.center }},
+        theme: "{{ page.theme }}",
+        transition: "{{ page.transition }}",
+        dependencies: [
+          { src: '/components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+          { src: '/components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+          { src: '/components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '/components/reveal.js/plugin/notes/notes.js' }
+        ]
+      });
+    </script>
+  </body>
+</html>
