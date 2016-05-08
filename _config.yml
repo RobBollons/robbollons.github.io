@@ -7,6 +7,10 @@ url: "http://thenorthcode.net"
 twitter_username: robbollons
 github_username: robbollons
 
+collections:
+  presentations:
+    output: true
+
 defaults:
   -
     scope:
