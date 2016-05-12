@@ -131,7 +131,8 @@ Notes:
 
 <section data-markdown>
    ## Where To Use Functional Programming?
-Notes:
+
+Note:
   * Any data that is in the business layer of the application
   * Operating over collections of data
   * Where it feels right
