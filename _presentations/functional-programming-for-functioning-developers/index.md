@@ -129,7 +129,7 @@ Notes:
   </section>
 </section>
 
-<section>
+<section data-markdown>
    ## Where To Use Functional Programming?
 Notes:
   * Any data that is in the business layer of the application
