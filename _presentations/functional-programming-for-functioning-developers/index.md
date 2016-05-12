@@ -106,7 +106,7 @@ Note:
   <section data-markdown>
     ## Functional Programming in the Wild:
     ### UNIX
-Notes:
+Note:
   * UNIX tools, although not strictly functional, operate in a functional way
   * Piping
   * single input and output
@@ -114,14 +114,14 @@ Notes:
   <section data-markdown>
     ## Functional Programming in the Wild:
     ### MapReduce - Hadoop
-Notes:
+Note:
   * Hadoop is a framework for large distributed processing and storage
   * The way it can handle large amounts of data is through the use of MapReduce - a functional programming concept for parallel processing
   </section>
   <section data-markdown>
     ## Functional Programming in the Wild:
     ### React JS & Redux
-Notes:
+Note:
   * Immutability
   * State management
   * Reduce side effects
