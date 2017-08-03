@@ -87,7 +87,7 @@ var foo = function () {
   // Here: a is 2, b is 4 and c is undefined
 
   bar();
-  // Now: a is 21, b is still 4 and c is still undefined
+  // Now: a is 25, b is still 4 and c is still undefined
 };
 {% endhighlight %}
 You can see that where you declare your variables matters based on how the inner function is defined and how the side effect from the inner function causes the 'a' variable to change it's value. Being clear with the declaration of variables can go a great way to building more reliable software. Keep functions as pure as possible with clearly defined inputs and predictable outputs.
