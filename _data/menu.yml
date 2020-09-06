@@ -1,0 +1,13 @@
+entries:
+  - title: me
+    url: false
+    entries:
+      - title: email
+        url: mailto:rbollons@gmail.com
+      - title: github
+        url: http://github.com/rbollons/
+
+  - title: toughts
+    post_list: true
+    url: false
+    entries: false
