@@ -3,11 +3,19 @@ entries:
     url: false
     entries:
       - title: email
-        url: mailto:rbollons@gmail.com
+        url: mailto:mrbalihai@protonmail.com
       - title: github
-        url: http://github.com/rbollons/
+        url: https://github.com/mrbalihai/
 
-  - title: toughts
+  - title: thoughts
     post_list: true
     url: false
     entries: false
+
+  - title: experiments
+    url: false
+    entries:
+      - title: Three.js Terrain
+        url: https://mrbalihai.github.io/terrain-experiments
+      - title: Web Audio
+        url: https://mrbalihai.github.io/webaudio-experiments
