@@ -5,3 +5,5 @@ goat_counter: "mrbalihai"
 description: About
 github_username: mrbalihai
 remote_theme: riggraz/no-style-please
+theme_config:
+  date_format: "%Y-%m-%d"
