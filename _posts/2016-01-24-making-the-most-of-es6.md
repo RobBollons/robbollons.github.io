@@ -14,25 +14,8 @@ I think these two happy chappies are perhaps the most useful features of ES6 and
 
 `let` allows us to declare variables that adhere to traditional 'block scope'. This means that when a variable is declared inside curly braces, switch cases or expressions, it will only retain it's value inside that scope. This requires much less cognitive load than using `var` because we typically only have to think about the variables effect within the immediate area of use.
 Here's an example of let in action (example taken from [Mozillas MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)):
-{% highlight javascript linenos %}
-function varTest() {
-  var x = 31;
-  if (true) {
-    var x = 71;  // same variable!
-    console.log(x);  // 71
-  }
-  console.log(x);  // 71
-}
 
-function letTest() {
-  let x = 31;
-  if (true) {
-    let x = 71;  // different variable
-    console.log(x);  // 71
-  }
-  console.log(x);  // 31
-}
-{% endhighlight %}
+{% gist 92fae6e554bc68fc4beb073a7c4d510e let-and-var.js %}
 
 `const` allows us to declare read-only values scoped in a similar way to `let`. Let's be clear about what you can and can't do with const values:
 
@@ -53,27 +36,11 @@ This is worth bearing in mind because there has been quite a lot of mis-understa
 ### 2. Arrow Functions (Fat Arrows)
 Arrow functions are nothing to do with declaring hash values like in PHP (typically known as a 'Fat Comma'). Arrow functions in JavaScript let us declare anonymous function expressions with much less typing on our keyboards. Weather you use functional programming or not, this results in much cleaner, terse and language-agnostic code. Here's an example that I used in my [blog post last week]({% post_url 2016-01-15-making-the-most-of-the-javascript-language %}).
 
-{% highlight javascript linenos %}
-const myArray  = [1, 2, 3, 4, 5, 6],
-      add      = (a, b) => a + b,
-      getTotal = (arr) => arr.reduce(add, 0);
-
-getTotal(myArray); // => 21
-{% endhighlight %}
+{% gist 92fae6e554bc68fc4beb073a7c4d510e arrow-function.js %}
 
 The way you'd write the same thing in ES5 is :
 
-{% highlight javascript linenos %}
-var myArray  = [1, 2, 3, 4, 5, 6],
-    add      = function (a, b) {
-      return a + b;
-    },
-    getTotal = function (arr) {
-      return arr.reduce(add, 0);
-    };
-
-getTotal(myArray); // => 21
-{% endhighlight %}
+{% gist 92fae6e554bc68fc4beb073a7c4d510e arrow-function-es5.js %}
 
 Now that the `function` and `return` keywords are gone as well as the opening and closing curly braces, the code is much easier to read and understand at a glance, this is especially nice when you use anonymous functions as arguments to other methods.
 The important thing to note about arrow functions is that they do not pass a different value for `this` and `arguments`. They will just use the same one as the parent scope that they were defined in.
@@ -82,15 +49,7 @@ The important thing to note about arrow functions is that they do not pass a dif
 ### 3. Template Strings
 If you're used to writing bash scripts then template strings in ES6 will be easy from the get-go. There are a few complicated things you can do with template string but in their simplest form you can do things like this:
 
-{% highlight javascript linenos %}
-  var sausage = 'cumberland';
-  console.log(`my favourite sausage is ${sausage}`);
-    // => 'my favourite sausage is cumberland'
-
-  var a = 1, b = 2;
-  console.log(`a + b = ${a + b}`);
-    // => 'a + b = 3'
-{% endhighlight %}
+{% gist 92fae6e554bc68fc4beb073a7c4d510e template-strings.js %}
 
 A slightly more advanced thing you can do with template string is using *tagged* template strings. This means you can apply a function to the string template to allow for more advanced manipulation. You can read more about this [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings#Tagged_template_strings).
 
