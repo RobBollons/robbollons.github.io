@@ -7,15 +7,16 @@ entries:
       - title: github
         url: https://github.com/mrbalihai/
 
+  - title: experiments
+    url: false
+    entries:
+      - title: three.js terrain
+        url: https://mrbalihai.github.io/terrain-experiments
+      - title: web audio
+        url: https://mrbalihai.github.io/webaudio-experiments
+
   - title: thoughts
     post_list: true
     url: false
     entries: false
 
-  - title: experiments
-    url: false
-    entries:
-      - title: Three.js Terrain
-        url: https://mrbalihai.github.io/terrain-experiments
-      - title: Web Audio
-        url: https://mrbalihai.github.io/webaudio-experiments
