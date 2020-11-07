@@ -14,19 +14,7 @@ JavaScript was born from chaos and due to this there are good and bad features t
 ### 1. Leverage First Class Functions
 First class functions turn a programming language into Lego™ for adults. In a nutshell, having first class functions means that JavaScript can pass functions as arguments, return a function as a result of another function and assign them to variables. This means you can do some very powerful things with much less code, in particular it enables functional programming. A simple real-world(ish) example:
 
-{% highlight javascript linenos %}
-var myArray = [1, 2, 3, 4, 5, 6]
-
-var add = function (a, b) {
-  return a + b;
-};
-
-var getTotal = function (arr) {
-  return arr.reduce(add, 0);
-};
-
-getTotal(myArray); // => 21
-{% endhighlight %}
+{% gist   first-class.js }
 
 On line 7 we assign an anonymous function to the `getTotal` variable. On line 8 we pass our `add` function as an argument to the `reduce` function.
 This allows us to create much higher level general purpose functions that save us having to repeat ourselves (adhering to the [DRY principle](https://en.wikipedia.org/wiki/Don't_repeat_yourself)). It also allows us to do function composition, in our example we composed our `getTotal` from a `reduce` of the `add` function.
@@ -49,19 +37,12 @@ Arrow functions, let & const, destructuring, tail call optimisation and template
 ES6 features introduce a fairly new way of writing JavaScript and warrant looking into in a bit more detail, exploring these features is perhaps a subset of this post which I might do as a follow-up next week.
 
 Using most ES6 features in a browser/NodeJS environment (at the time of writing) require the use of a transpiler, the tool for the job is [https://babeljs.io/](https://babeljs.io/_). As primarily a web developer, I like to use babel along side browserify using a simple command to transpile my ES6 code into ES5 code like so:
-{% highlight bash linenos %}
-npm install -g browserify babelify
-browserify -t babelify es6code.js > es5code.js
-{% endhighlight %}
+
+{% gist 2ad4cd6e81794e0c0b489ead8de32b34 first-class.js }
 
 If we were to re-write the first example in ES6 it might look like this:
-{% highlight javascript linenos %}
-const myArray = [1, 2, 3, 4, 5, 6]
-const add = (a, b) => a + b;
-const getTotal = (arr) => arr.reduce(add, 0);
 
-getTotal(myArray); // => 21
-{% endhighlight %}
+{% gist 2ad4cd6e81794e0c0b489ead8de32b34 es6-example.js }
 
 This is way more terse and way way easier on the eye, this alone should be enough to pique your interest in ES6.
 One thing to bare in mind though is that some of the engine specific ES6 features might not work with transpilation.
@@ -70,45 +51,15 @@ One thing to bare in mind though is that some of the engine specific ES6 feature
 
 #### Scoping
 The best way to illustrate this is through a code example and I'm going to base it on a similar example from Douglass Crockfords book [The Good Parts](http://www.amazon.com/exec/obidos/ASIN/0596517742/wrrrldwideweb) because it does the job well.
-{% highlight javascript linenos %}
-var foo = function () {
-  var a = 2,
-      b = 4;
 
-  var bar = function () {
-    var b = 9,
-        c = 14;
-    // Here: a is 2, b is 9 and c is 14
+{% gist 2ad4cd6e81794e0c0b489ead8de32b34 scope-example.js }
 
-    a = a + b + c;
-    // Here: a is 25, b is still 9 and c is still 14
-  };
-
-  // Here: a is 2, b is 4 and c is undefined
-
-  bar();
-  // Now: a is 25, b is still 4 and c is still undefined
-};
-{% endhighlight %}
 You can see that where you declare your variables matters based on how the inner function is defined and how the side effect from the inner function causes the 'a' variable to change it's value. Being clear with the declaration of variables can go a great way to building more reliable software. Keep functions as pure as possible with clearly defined inputs and predictable outputs.
 
 #### Closures
 Closures are a great way to maintain private variables in JavaScript but also seem to be a source of great misunderstanding. In basic terms a closure is gives you access to an outer functions scope from an inner function (AKA lexical scope), like 'a' in the previous scoping example. That's basically it. Where it gets interesting is when you return a function from an outer function where the inner function accesses the scope of the outer function, the inner function will retain the outer functions scope past the lifetime of the outer function. That sounds really complicated so let's explain it in an example:
 
-{% highlight javascript linenos %}
-var outer = function () {
-  var a = 1; // variables declared outside of the 'inner' function declaration
-  var b = 2;
-  
-  return function inner() {
-    return a; // return 'a' that was defined in the outer function.
-    // return b; // We could also access 'b' if we felt like it.
-  };
-};
-
-var inner = outer(); // the outer function returns the inner function
-inner(); // => 1 // the inner functions still remembers that 'a' was defined as '1' from the outer function
-{% endhighlight %}
+{% gist 2ad4cd6e81794e0c0b489ead8de32b34 closure-example.js }
 
 #### Type Coercion
 Many a joke has been made at the expense of JavaScript due to it's seemingly nonsensical type-coercion. The best thing to do to keep all the haters at bay is to use the trusty `===` which will do a strict comparison between objects which in most cases is what you want. The only time that won't work is when you want to compare separate object literals, even if they have exactly the same properties and structure, they will never be equal because they are two completely separate objects. In this case just compare each of the properties of the objects, some libraries like [underscorejs](http://underscorejs.org/) offer ways of doing a *deep comparison* which does the aforementioned.
