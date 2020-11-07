@@ -6,7 +6,7 @@ tags:
   - Architecture
 ---
 
-As a programmer it's pretty fair to say that you won't go through your career without using somebody else's code at some point. Effective code reuse is the panacea for good programing languages and we should always try to write our code with re-use in mind.
+As a programmer it's pretty fair to say that you won't go through your career without using somebody else's code at some point. Effective code reuse is the panacea for good programming languages and we should always try to write our code with re-use in mind.
 In using third party code however, we are introducing a dependency into our program which needs careful consideration because we are handing over part of the responsibility of our program to something we don't always have control over. Time after time I've seen poorly managed dependencies that result in sometimes significant business problems further down the line costing an awful lot of money to repair, how can we avoid these problems and save our future selves a whole lot of trouble?
 
 # What Problems Can Dependencies Cause?
@@ -30,7 +30,7 @@ In most cases the net result of this is that you end up with an out-dated code b
 
 # Is the Dependency Proprietary or Open Source?
 Proprietary dependencies in my view should be avoided at all costs, particularly for long-term projects. This is because you have no idea about the state of the code, the longevity of the module or in some cases the long-term renewal costs of the licence. If you absolutely must have a proprietary dependency then make sure it is supported by contractual evidence that it will be supported for the specific needs and time-spans of your program. Proprietary dependencies usually have expensive licence costs, but you can always bet that the cost of effort needed to factor out a problem-causing dependency is much much more.
-Open Source dependencies are marginally less of a risk because you usually have the option of forking the source code and modifying it yourself. The thing to be careful of is that the maintainer of the project may decide to take it in a different direction to which isn't suited to your requirements or perhaps abandon the project altogether, in this case you would need to either contribute to the project to keep it in line with your requirements or fork it and maintain it yourself. Another thing to watch out for with open source software is licencing. If the licence is MIT then it's a fairly safe to assume that you can use it in your own commercial product, GPL licences however are more complex and could, by some people, be considered to potentially 'infect' your software with it's limitations. You can read about different software licences in more human terms using this website: [https://tldrlegal.com/](https://tldrlegal.com/)
+Open Source dependencies are marginally less of a risk because you usually have the option of forking the source code and modifying it yourself. The thing to be careful of is that the maintainer of the project may decide to take it in a different direction to which isn't suited to your requirements or perhaps abandon the project altogether, in this case you would need to either contribute to the project to keep it in line with your requirements or fork it and maintain it yourself. Another thing to watch out for with open source software is licensing. If the licence is MIT then it's a fairly safe to assume that you can use it in your own commercial product, GPL licences however are more complex and could, by some people, be considered to potentially 'infect' your software with it's limitations. You can read about different software licences in more human terms using this website: [https://tldrlegal.com/](https://tldrlegal.com/)
 
 # Do I Really Need this Code?
 This may sound daft but in the majority of cases a dependency is introduced just because it's popular and was mentioned in a blog post or is a simple wrapper for an unfamiliar facet and simply isn't needed at all.
@@ -42,4 +42,4 @@ The key to managing dependencies is through architecture. Keep your code base sm
 # TL;DR
 - Avoid Dependencies
 - Keep Code Small and Modular
-- Consider Licencing
+- Consider Licensing
