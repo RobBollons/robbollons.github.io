@@ -14,7 +14,7 @@ JavaScript was born from chaos and due to this there are good and bad features t
 ### 1. Leverage First Class Functions
 First class functions turn a programming language into Lego™ for adults. In a nutshell, having first class functions means that JavaScript can pass functions as arguments, return a function as a result of another function and assign them to variables. This means you can do some very powerful things with much less code, in particular it enables functional programming. A simple real-world(ish) example:
 
-{% gist   first-class.js %}
+{% gist 2ad4cd6e81794e0c0b489ead8de32b34 first-class.js %}
 
 On line 7 we assign an anonymous function to the `getTotal` variable. On line 8 we pass our `add` function as an argument to the `reduce` function.
 This allows us to create much higher level general purpose functions that save us having to repeat ourselves (adhering to the [DRY principle](https://en.wikipedia.org/wiki/Don't_repeat_yourself)). It also allows us to do function composition, in our example we composed our `getTotal` from a `reduce` of the `add` function.
@@ -38,7 +38,7 @@ ES6 features introduce a fairly new way of writing JavaScript and warrant lookin
 
 Using most ES6 features in a browser/NodeJS environment (at the time of writing) require the use of a transpiler, the tool for the job is [https://babeljs.io/](https://babeljs.io/_). As primarily a web developer, I like to use babel along side browserify using a simple command to transpile my ES6 code into ES5 code like so:
 
-{% gist 2ad4cd6e81794e0c0b489ead8de32b34 first-class.js %}
+{% gist 2ad4cd6e81794e0c0b489ead8de32b34 browserify-babelify.sh %}
 
 If we were to re-write the first example in ES6 it might look like this:
 
